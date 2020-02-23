@@ -31,15 +31,16 @@ def getWays(n, c):
                         p_copy = sorted(p_copy)
                         if p_copy not in possibilities_per_change:
                             possibilities_per_change.append(p_copy)
+            elif coin > change:
+                break
         R[change] = possibilities_per_change
-    print(R[change])
     return int(len(R[n]))
 
 if __name__ == '__main__':
 
     first_multiple_input = '''
-    10 4
-    2 5 3 6
+    166 23
+    5 37 8 39 33 17 22 32 13 7 10 35 40 2 43 49 46 19 41 1 12 11 28
     '''
     n, m, *c = map(int,first_multiple_input.split())
 
